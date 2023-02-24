@@ -130,8 +130,6 @@ body {
 #dock {
     display: flex;
     align-items: center;
-    padding: 8px;
-    gap: 16px;
     position: absolute;
     height: 5.75rem;
     bottom: 4px;
@@ -142,26 +140,69 @@ body {
 }
 
 #dock .dockIcons {
+    height: 100%;
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 0.5rem 0;
+    margin: 0 0.25rem;
 }
 
 #dock .appIcon {
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;margin: 0.25rem;
-    transition: all 0.3s ease-in-out;
+    align-items: center;
 }
 
-#dock .appIcon:hover {
+#dock .appIcon img {
+    margin: 0.25rem;
+    transition: all 0.15s ease-in-out;
+}
+
+
+#dock .appIcon:hover img {
     transform: scale(1.5) translateY(-1rem);
     margin: 0 1.5rem 4rem 1.5rem;
+  }
+  
+#dock .appIcon:hover + .appIcon img {
+    transform: scale(1.3) translateY(-0.75rem);
+    margin: 0 0.75rem 3rem 0.75rem;
+}
+
+#dock .appIcon:hover + .appIcon + .appIcon img {
+    transform: scale(1.1) translateY(-0.5rem);
+    margin: 0 0.75rem 1rem 0.75rem;
+}
+
+.hoveredOne {
+    transform: scale(1.3) translateY(-0.75rem);
+    transition: all 0.3s ease-in-out;
+    margin: 0 0.75rem 3rem 0.75rem;
+}
+
+.hoveredTwo {
+    transform: scale(1.1) translateY(-0.5rem);
+    transition: all 0.3s ease-in-out;
+    margin: 0 0.75rem 1rem 0.75rem;
+}
+
+/* .hoverMargin {
+    margin: 0 0.75rem;
+    transition: all 0.3s ease-in-out;
+} */
+
+  
+
+
+#dock .separator {
+    height: 80%;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0 4px;
 }
 
 #dock .binIcon {
-    border-left: 1.5px solid rgba(255, 255, 255, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
