@@ -1,13 +1,27 @@
+/* -------------------------------------------------------------- UNIVERSAL STYLES ------------------------------------------------------ */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'SF Pro Display', sans-serif;
+    user-select: none;
 }
+
+
+
+
+/* -------------------------------------------------------------- BODY ------------------------------------------------------------------------ */
 
 body {
     background-color: black;
+    overflow: hidden;
 }
+
+
+
+
+/* ---------------------------------------------------------------MAIN SECTION--------------------------------------------------------------- */
 
 #main {
     width: 100%;
@@ -18,6 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 #main .topBar {
@@ -78,10 +93,14 @@ body {
     padding: 4px 8px;
 }
 
+
+
+
+/* ----------------------------------------------------------------DESKTOP AREA---------------------------------------------------------------- */
+
 .desktopArea {
     align-self: flex-start;
     height: calc(100vh - 1.5rem - 5.75rem - 8px);
-    /* width: 100%; */
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +143,7 @@ body {
 
 
 
-/* REPLICA OF MACOS DOCK */
+/* ------------------------------------------------REPLICA OF MACOS DOCK -----------------------------------------------------------*/
 
 
 #dock {
@@ -190,4 +209,100 @@ body {
 
 #dock .binIcon img{
     height: 4rem;
+}
+
+
+
+
+/* ------------------------------------------------------MACOSX TERMINAL WINDOW ---------------------------------------------- */
+
+.tWActive {
+    position: absolute;
+    top: 5rem;
+    z-index: 999;
+    height: 40rem;
+    width: 50rem;
+    background-color: #282828;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.15)) drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.35));
+}
+
+.terminalWindow {
+    display: none;
+}
+
+.terminalTitleBar {
+    width: 100%;
+    height: 1.75rem;
+    background-color: #1E1E1E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminalTrafficLights {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+}
+
+.tRed {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #ED6A5F;
+    margin-left: 0.5rem;
+}
+
+.tYellow {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #F5BF4F;
+    margin-left: 0.5rem;
+}
+
+.tGreen {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #61C554;
+    margin-left: 0.5rem;
+}
+
+.terminalTitle {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.004em;
+    color: rgba(235, 235, 245, 0.6);
+}
+
+.tTextArea {
+    width: 100%;
+    height: calc(100% - 1.75rem);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    font-family: 'Menlo', sans-serif;
+    font-size: 14px;
+    white-space: pre-line;
+    user-select: text;
+}
+
+::selection {
+    background-color: white;
+    color: black;
+}
+
+::-moz-selection {
+    background-color: white;
+        color: black;
+}
+
+*::-ms-selection {
+    background-color: white;
+        color: black;
 }

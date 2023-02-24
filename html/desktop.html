@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desktop - My Replica Of MacOs Dynamic Island</title>
     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+    <link rel="icon" href="../images/macFavicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/macFavicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/desktop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+<!-- ---------------------------------------------------------------------------MAIN SECTION--------------------------------------------------------------- -->
     <main id="main">
+
+        <!-- ----------------------------------------TOP BAR-------------------------------------------- -->
         <div class="topBar">
             <div class="menuBars">
                 <ul>
@@ -62,6 +69,9 @@
             </div>
         </div>
 
+
+        <!-- ---------------------------------------------------MAIN DESKTOP AREA WITH DESKTOP ICONS----------------------------------------------------------- -->
+
         <div class="desktopArea">
             <div id="application" class="applicationIcon">
                 <div class="icon"  style="background-image: url(../images/1blocker.png);"></div>
@@ -88,7 +98,7 @@
                 <div class="iconName">Shazam</div>
             </div>
             <div class="applicationIcon">
-                <div class="icon" style="background-image: url(../images/terminal.png);"></div>
+                <div class="icon terminalApp" style="background-image: url(../images/terminal.png);"></div>
                 <div class="iconName">Terminal</div>
             </div>
             <div class="applicationIcon">
@@ -129,6 +139,8 @@
             </div>
         </div>
 
+        <!-- ------------------------------------------------------MACOS MONTEREY DOCK ----------------------------------------------------- -->
+
         <div id="dock">
             <ul class="dockIcons">
                 <li class="appIcon ico1"><img class="img1" src="../images/png-64/app-store-64x64-2365235.png" alt=""></li>
@@ -144,6 +156,22 @@
                 <li class="separator"></li>
                 <li><div class="appIcon binIcon"><img class="binImg" src="../images/trash.png" alt=""></div></li>
             </ul>
+        </div>
+
+        <!-- -------------------------------------------------------- TERMINAL WINDOW -------------------------------------------------------- -->
+
+        <div class="terminalWindow" id="tWindow">
+            <div class="terminalTitleBar" id="tWindowBar">
+                <div class="terminalTrafficLights">
+                    <div class="tRed"></div>
+                    <div class="tYellow"></div>
+                    <div class="tGreen"></div>
+                </div>
+                <div class="terminalTitle">Terminal - Bradley Shazima</div>
+            </div>
+            <div class="tTextArea">
+                Last login: Fri Feb 24 17:38:03 on ttys00<br/>bradley@bradleys-MacBook-Pro ~ % softwareupdate --fetch-full-installer
+            </div>
         </div>
     </main>
     

@@ -1,4 +1,4 @@
-// BACKGROUND CHANGER ICON
+// ---------------------------------------------------------------BACKGROUND CHANGER ICON----------------------------------------------------------
 
 
 const shuffleBtn = document.querySelector("#application");
@@ -14,7 +14,8 @@ var images = ['wallpaper1.png',
                 'wallpaper9.jpg'];
 let currentImageIndex = 0;
 
-// Pre-load images
+// --------------------------------Pre-load images-------------------------------------------
+
 images.forEach((image) => {
     const img = new Image();
     img.src = `../images/${image}`;
@@ -32,7 +33,7 @@ shuffleBtn.addEventListener('click', () => {
 });
 
 
-// DOCK ICONS HOVER STATE
+// -----------------------------------------------------------------DOCK ICONS HOVER STATE------------------------------------------------------
 
 const first = document.querySelector('.ico1');
 const second = document.querySelector('.ico2');
@@ -204,3 +205,88 @@ bin.addEventListener('mouseout', () => {
 });
 
 
+// ------------------------------------------------------------------TERMINAL WINDOW----------------------------------------------------------------
+
+
+const tIcon = document.querySelector('.terminalApp');
+const tWindow = document.querySelector('.terminalWindow');
+
+tIcon.addEventListener('click', () => {
+    if (tWindow.classList.contains('terminalWindow')) {
+        tWindow.classList.remove('terminalWindow');
+        tWindow.classList.add('tWActive');
+    }
+    else if (tWindow.classList.contains('tWActive')) {
+        tWindow.classList.remove('tWActive');
+        tWindow.classList.add('terminalWindow');
+    }
+});
+
+
+// ----------------------------------------------Draggable terminal----------------------------------------------------------------
+
+
+
+
+const termTopBar = document.querySelector('#tWindowBar');
+const termWindow = document.querySelector('#tWindow');
+
+dragElement(termWindow);
+
+function dragElement(element) {
+    var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+    if (termTopBar) {
+        termTopBar.onmousedown = dragMouseDown;
+    }
+    else {
+        element.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // Calculate the new position of the element
+        let newTop = element.offsetTop - pos2;
+        let newLeft = element.offsetLeft - pos1;
+        // Get the dimensions of the viewport
+        let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        // Prevent the element from moving outside the viewport
+        if (newTop < 0) {
+          newTop = 0;
+        }
+        if (newTop + element.offsetHeight > viewportHeight) {
+          newTop = viewportHeight - element.offsetHeight;
+        }
+        if (newLeft < 0) {
+          newLeft = 0;
+        }
+        if (newLeft + element.offsetWidth > viewportWidth) {
+          newLeft = viewportWidth - element.offsetWidth;
+        }
+        // Set the new position of the element
+        element.style.top = newTop + 'px';
+        element.style.left = newLeft + 'px';
+    }
+
+    function closeDragElement(e) {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
