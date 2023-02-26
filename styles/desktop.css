@@ -216,7 +216,7 @@ body {
 
 /* ------------------------------------------------------MACOSX TERMINAL WINDOW ---------------------------------------------- */
 
-.tWActive {
+.activeWindow {
     position: absolute;
     top: 5rem;
     z-index: 999;
@@ -228,11 +228,11 @@ body {
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.15)) drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.35));
 }
 
-.terminalWindow {
+.inactiveWindow {
     display: none;
 }
 
-.terminalTitleBar {
+.titleBar {
     width: 100%;
     height: 1.75rem;
     background-color: #1E1E1E;
@@ -241,7 +241,7 @@ body {
     justify-content: center;
 }
 
-.terminalTrafficLights {
+.trafficLights {
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
@@ -305,4 +305,59 @@ body {
 *::-ms-selection {
     background-color: white;
         color: black;
+}
+
+
+/* ---------------------------------------------------------OPEN AI CHAT GPT WINDOW----------------------------------------------------- */
+
+.chatGPT {
+    position: absolute;
+    top: 5rem;
+    z-index: 99;
+    height: 40rem;
+    width: 50rem;
+    background-color: #444653;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.15)) drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.35));
+}
+
+.chatTextArea {
+    width: 100%;
+    height: calc(100% - 1.75rem);
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Menlo', sans-serif;
+    font-size: 14px;
+    white-space: pre-line;
+    user-select: none;
+    display: flex;
+}
+
+.chatSideBar {
+    height: 100%;
+    width: 260px;
+    background-color: #202123;
+}
+
+.chatMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: calc(100% - 260px);
+}
+
+.chatHome {
+    /* background-color: #61C554; */
+    height: 20rem;
+    width: 20rem;
+}
+
+.chatTxtInputArea {
+    position: absolute;
+    bottom: 0;
+    background-color: #353541;
+    width: 100%;
+    height: 100px;
 }

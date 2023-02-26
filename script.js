@@ -209,18 +209,27 @@ bin.addEventListener('mouseout', () => {
 
 
 const tIcon = document.querySelector('.terminalApp');
-const tWindow = document.querySelector('.terminalWindow');
+const tWindow = document.querySelector('#tWindow');
+const tRed = document.querySelector('.tRed');
+const tGreen = document.querySelector('.tGreen');
+const tYellow = document.querySelector('.tYellow');
+
+tRed.onclick = function () {
+    tWindow.classList.remove('activeWindow');
+    tWindow.classList.add('inactiveWindow');
+}
 
 tIcon.addEventListener('click', () => {
-    if (tWindow.classList.contains('terminalWindow')) {
-        tWindow.classList.remove('terminalWindow');
-        tWindow.classList.add('tWActive');
+    if (tWindow.classList.contains('inactiveWindow')) {
+        tWindow.classList.remove('inactiveWindow');
+        tWindow.classList.add('activeWindow');
     }
-    else if (tWindow.classList.contains('tWActive')) {
-        tWindow.classList.remove('tWActive');
-        tWindow.classList.add('terminalWindow');
+    else if (tWindow.classList.contains('activeWindow')) {
+        tWindow.classList.remove('activeWindow');
+        tWindow.classList.add('inactiveWindow');
     }
 });
+
 
 
 // ----------------------------------------------Draggable terminal----------------------------------------------------------------
